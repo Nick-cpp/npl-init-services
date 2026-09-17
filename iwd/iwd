@@ -1,0 +1,9 @@
+#!/bin/sh
+
+start() {
+    /usr/libexec/iwd >> /etc/npl-init/log 2>&1 &
+}
+
+stop() {
+    killall iwd
+}
