@@ -1,0 +1,11 @@
+#!/bin/sh
+
+start() {
+    mkdir -p /run/dbus /var/lib/dbus
+    dbus-uuidgen --ensure=/var/lib/dbus/machine-id
+    dbus-daemon --system --fork >> /etc/npl-init/log 2>&1
+}
+
+stop() {
+    killall dbus-daemon || pkill dbus-daemon
+}
