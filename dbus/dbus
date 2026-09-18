@@ -8,4 +8,5 @@ start() {
 
 stop() {
     killall dbus-daemon || pkill dbus-daemon
+    rm -f /run/dbus/pid
 }
