@@ -7,6 +7,6 @@ start() {
 }
 
 stop() {
-    killall dbus-daemon || true
+    killall dbus-daemon
     rm -f /run/dbus/pid
 }
