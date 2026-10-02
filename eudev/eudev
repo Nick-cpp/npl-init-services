@@ -1,0 +1,12 @@
+#!/bin/sh
+
+start() {
+    udevd --daemon
+    udevadm trigger --action=add --type=subsystems
+    udevadm trigger --action=add --type=devices
+    udevadm settle
+}
+
+stop() {
+    udevadm control --exit
+}
